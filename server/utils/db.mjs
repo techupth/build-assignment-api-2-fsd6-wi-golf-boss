@@ -1,9 +1,10 @@
 // Create PostgreSQL Connection Pool here !
 import * as pg from "pg";
+import "dotenv/config";
 const { Pool } = pg.default;
 
 const connectionPool = new Pool({
-  connectionString: "postgresql://postgres:123456@localhost:5432/assignments",
+  connectionString: process.env.DATABASE_URL,
 });
 
 export default connectionPool;
